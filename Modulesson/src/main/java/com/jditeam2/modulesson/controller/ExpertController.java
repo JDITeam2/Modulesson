@@ -46,6 +46,17 @@ public class ExpertController {
         return "redirect:/";
     }
 
+    @GetMapping(value = "/login")
+    public String loginCustomer() {
+        return "/expert/customerLoginForm";
+    }
+
+    @GetMapping(value = "/login/error")
+    public String loginError(Model model) {
+        model.addAttribute("loginErrorMsg", "아이디 또는 비밀번호를 확인해주세요.");
+        return "/expert/customerLoginForm";
+    }
+
     @PutMapping("/update-info")
     public ResponseEntity<String> updateUserInfo(@AuthenticationPrincipal CustomUserDetailsExpert userDetails, @RequestBody Expert updatedExpert) {
         try {
@@ -62,4 +73,6 @@ public class ExpertController {
                     .body("업데이트에 실패했습니다.");
         }
     }
+
+
 }

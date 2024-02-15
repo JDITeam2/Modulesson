@@ -8,15 +8,17 @@ import javax.persistence.*;
 
 @NoArgsConstructor
 @Entity
+@ToString
 @Getter
 @Setter
-@Table(name = "Expert")
+@Table(name = "expert")
 public class Expert {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "Expert_id")
     private Long id;
 
+    @Column(unique = true)
     private String email;
     private String expertName;
     private String password;
@@ -39,7 +41,7 @@ public class Expert {
     public static Expert createExpert(ExpertForm expertForm, PasswordEncoder passwordEncoder) {
         Expert expert = Expert.builder()
                 .expertName(expertForm.getExpertName())
-                .password(expertForm.getPassword())
+                .password(passwordEncoder.encode(expertForm.getPassword()))
                 .nickname(expertForm.getNickname())
                 .email(expertForm.getEmail())
                 .phone(expertForm.getPhone())

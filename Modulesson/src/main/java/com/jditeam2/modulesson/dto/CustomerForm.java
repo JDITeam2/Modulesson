@@ -10,10 +10,10 @@ import javax.validation.constraints.Size;
 
 @NoArgsConstructor
 @Getter
-public class ExpertFormDto {
+public class CustomerForm {
     @NotEmpty(message = "이름을 입력해 주세요.")
     @Size(min = 3)
-    private String expertName;
+    private String userName;
 
     @NotEmpty(message = "비밀번호를 입력해 주세요.")
     @Size(min = 6, max = 16, message = "비밀번호는 4자 이상, 16자 이하로 입력해 주세요.")
@@ -31,17 +31,12 @@ public class ExpertFormDto {
     @Size(min = 13, max = 13, message = "전화번호는 - 를 제외 하고 입력해 주세요")
     private String phone;
 
-    @Size(max = 1000, message = "소개글은 1000자 이내 입니다.")
-    private String introduction;
-
     @Builder
-    public ExpertFormDto(Long id, String expertName, String password, String nickname, String email, String phone, String introduction) {
-        this.expertName = expertName;
+    public CustomerForm(Long id, String userName, String password, String nickname, String email, String phone) {
+        this.userName = userName;
         this.password = password;
         this.nickname = nickname;
         this.email = email;
         this.phone = phone;
-        this.introduction = introduction;
     }
-
 }
