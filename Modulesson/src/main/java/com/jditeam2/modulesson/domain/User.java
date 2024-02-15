@@ -1,6 +1,6 @@
 package com.jditeam2.modulesson.domain;
 
-import com.jditeam2.modulesson.dto.UserFormDto;
+import com.jditeam2.modulesson.dto.UserForm;
 import lombok.*;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
@@ -33,13 +33,13 @@ public class User {
         this.phone = phone;
     }
 
-    public static User createUser(UserFormDto userFormDto, PasswordEncoder passwordEncoder) {
+    public static User createUser(UserForm userForm, PasswordEncoder passwordEncoder) {
         User user = User.builder()
-                .userName(userFormDto.getUserName())
-                .password(userFormDto.getPassword())
-                .nickname(userFormDto.getNickname())
-                .email(userFormDto.getEmail())
-                .phone(userFormDto.getPhone())
+                .userName(userForm.getUserName())
+                .password(userForm.getPassword())
+                .nickname(userForm.getNickname())
+                .email(userForm.getEmail())
+                .phone(userForm.getPhone())
                 .build();
         return user;
     }

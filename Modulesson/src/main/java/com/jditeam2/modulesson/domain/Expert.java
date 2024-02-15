@@ -1,6 +1,6 @@
 package com.jditeam2.modulesson.domain;
 
-import com.jditeam2.modulesson.dto.ExpertFormDto;
+import com.jditeam2.modulesson.dto.ExpertForm;
 import lombok.*;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
@@ -36,14 +36,14 @@ public class Expert {
         this.introduction = introduction;
     }
 
-    public static Expert createExpert(ExpertFormDto expertFormDto, PasswordEncoder passwordEncoder) {
+    public static Expert createExpert(ExpertForm expertForm, PasswordEncoder passwordEncoder) {
         Expert expert = Expert.builder()
-                .expertName(expertFormDto.getExpertName())
-                .password(expertFormDto.getPassword())
-                .nickname(expertFormDto.getNickname())
-                .email(expertFormDto.getEmail())
-                .phone(expertFormDto.getPhone())
-                .introduction(expertFormDto.getIntroduction())
+                .expertName(expertForm.getExpertName())
+                .password(expertForm.getPassword())
+                .nickname(expertForm.getNickname())
+                .email(expertForm.getEmail())
+                .phone(expertForm.getPhone())
+                .introduction(expertForm.getIntroduction())
                 .build();
         return expert;
     }
