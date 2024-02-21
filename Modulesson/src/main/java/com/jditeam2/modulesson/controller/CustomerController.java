@@ -28,7 +28,7 @@ public class CustomerController {
     @GetMapping(value = "/new")
     public String userForm(Model model) {
         model.addAttribute("customerFormDto", new CustomerForm());
-        return "customer/customerForm"; 
+        return "customer/customerForm";
     }
 
     @PostMapping(value = "newUser")
