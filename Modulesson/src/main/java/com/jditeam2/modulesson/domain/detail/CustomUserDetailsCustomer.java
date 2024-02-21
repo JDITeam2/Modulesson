@@ -4,11 +4,11 @@ import org.springframework.security.core.GrantedAuthority;
 
 import java.util.Collection;
 
-public class CustomUserDetailsUser extends CustomUserDetails {
+public class CustomUserDetailsCustomer extends CustomUserDetails {
 
         private String additionalUserInfo;  // User 특유의 추가 정보
 
-        public CustomUserDetailsUser(String username, String password, Collection<? extends GrantedAuthority> authorities, String additionalUserInfo) {
+        public CustomUserDetailsCustomer(String username, String password, Collection<? extends GrantedAuthority> authorities, String additionalUserInfo) {
             super(username, password, authorities);
             this.additionalUserInfo = additionalUserInfo;
         }

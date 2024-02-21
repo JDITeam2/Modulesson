@@ -1,7 +1,7 @@
 package com.jditeam2.modulesson.controller;
 
 import com.jditeam2.modulesson.domain.Customer;
-import com.jditeam2.modulesson.domain.detail.CustomUserDetailsUser;
+import com.jditeam2.modulesson.domain.detail.CustomUserDetailsCustomer;
 import com.jditeam2.modulesson.dto.CustomerForm;
 import com.jditeam2.modulesson.service.CustomerService;
 import lombok.RequiredArgsConstructor;
@@ -59,7 +59,7 @@ public class CustomerController {
     }
 
     @PutMapping("/update-info")
-    public ResponseEntity<String> updateUserInfo(@AuthenticationPrincipal CustomUserDetailsUser userDetails, @RequestBody Customer updatedCustomer) {
+    public ResponseEntity<String> updateUserInfo(@AuthenticationPrincipal CustomUserDetailsCustomer userDetails, @RequestBody Customer updatedCustomer) {
         try {
             String username = userDetails.getUsername();
             customerService.updateUserInfo(username, updatedCustomer.getUserName(),
