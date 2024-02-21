@@ -1,6 +1,5 @@
 package com.jditeam2.modulesson.service;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jditeam2.modulesson.domain.Customer;
 import com.jditeam2.modulesson.domain.Expert;
 import com.jditeam2.modulesson.dto.CustomerForm;
@@ -8,28 +7,17 @@ import com.jditeam2.modulesson.dto.ExpertForm;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.test.context.TestPropertySource;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.transaction.annotation.Transactional;
 
-import static org.junit.jupiter.api.Assertions.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@AutoConfigureMockMvc
 @SpringBootTest
 @Transactional
 @TestPropertySource(properties = "spring.config.location=classpath:application-test.yml")
 class CustomerServiceTest {
-
-    @Autowired
-    private MockMvc mockMvc;
-
-    @Autowired
-    private ObjectMapper objectMapper;
 
     @Autowired
     CustomerService customerService;

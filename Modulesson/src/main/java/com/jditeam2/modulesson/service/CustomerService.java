@@ -1,6 +1,7 @@
 package com.jditeam2.modulesson.service;
 
 import com.jditeam2.modulesson.repository.ExpertRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
 import com.jditeam2.modulesson.domain.Customer;
 import com.jditeam2.modulesson.repository.CustomerRepository;
@@ -16,7 +17,6 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 public class CustomerService implements UserDetailsService {
     private final CustomerRepository customerRepository;
-    private final ExpertRepository expertRepository;
 
     public Customer saveUser(Customer customer) {
         validateDuplicateUser(customer);

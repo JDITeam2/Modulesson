@@ -71,40 +71,4 @@ public class CustomerController {
                     .body("업데이트에 실패했습니다.");
         }
     }
-
-
-
-//
-//
-//    @GetMapping("/mypage")
-//    public String myPage(User user, @AuthenticationPrincipal User currentUser) {
-//        List<Category> categoryList = categoryService.findAll();
-//
-//
-//    }
-//
-//    @PostMapping("/{username}")
-//    public ResponseEntity<User> getUserByUsername(@PathVariable String username) {
-//        User user = userService.findBy(username);
-//        if (user != null) {
-//            return ResponseEntity.ok(user);
-//        } else {
-//            return ResponseEntity.notFound().build();
-//        }
-//    }
-//
-//    @PutMapping("/{username}")
-//    public ResponseEntity<String> updateUserByUsername(@PathVariable String username, @RequestBody User updatedUser) {
-//        User existingUser = userService.findByUserName(username);
-//        if (existingUser != null) {
-//            userService.updateUser(existingUser);
-//            existingUser.setUserName(updatedUser.getUserName());
-//            existingUser.setEmail(updatedUser.getEmail());
-//            existingUser.setPhone(updatedUser.getPhone());
-//            existingUser.setNickname(updatedUser.getNickname());
-//            return ResponseEntity.ok("유저 업데이트에 성공했습니다.");
-//        } else {
-//            return ResponseEntity.notFound().build();
-//        }
-//    }
 }
